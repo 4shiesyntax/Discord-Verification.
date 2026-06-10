@@ -4,14 +4,14 @@
 
 <br/>
 
-[![discord.js](https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.js.org)
-[![Node.js](https://img.shields.io/badge/node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+[![discord.js](https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge\&logo=discord\&logoColor=white)](https://discord.js.org)
+[![Node.js](https://img.shields.io/badge/node.js-18+-339933?style=for-the-badge\&logo=node.js\&logoColor=white)](https://nodejs.org)
 [![License](https://img.shields.io/badge/license-MIT-c9c9ff?style=for-the-badge)](LICENSE)
 [![Made by](https://img.shields.io/badge/made%20by-lincode.dev-5865F2?style=for-the-badge)](https://lincode.dev)
 
 <br/>
 
-*A production-grade Discord bot — slash commands, dynamic loaders, cooldown system, and clean error handling.*
+*A production-grade Discord bot with slash commands, dynamic loaders, cooldown management, and clean error handling.*
 
 </div>
 
@@ -19,15 +19,18 @@
 
 ## ✦ Features
 
-- Slash-command-only architecture — no prefix, no legacy patterns
-- Dynamic command and event loaders — drop a file, it just works
-- Per-command cooldowns with in-memory tracking
-- Centralized user & bot permission validation
-- Reusable `EmbedBuilder`, `Logger`, `ErrorHandler`, and `CooldownManager` utilities
-- Structured logger with timestamps and color-coded levels
-- Graceful error handling at interaction and process level
-- Lightweight file-based persistence for usage statistics
-- ESLint + Prettier configured out of the box
+* Slash command architecture only
+* Dynamic command and event loading
+* Per-command cooldown tracking
+* User and bot permission validation
+* Reusable `EmbedBuilder` utility
+* Reusable `Logger` utility
+* Reusable `ErrorHandler` utility
+* Reusable `CooldownManager` utility
+* Structured logging with timestamps
+* Graceful interaction and process error handling
+* Lightweight file-based statistics storage
+* ESLint and Prettier configuration included
 
 <br/>
 
@@ -36,8 +39,8 @@
 > Requires **Node.js 18** or higher.
 
 ```bash
-git clone https://github.com/your-username/evelyns.git
-cd evelyns
+git clone https://github.com/4shiesyntax/discordme_evelyns.git
+cd discordme_evelyns
 npm install
 ```
 
@@ -45,115 +48,93 @@ npm install
 
 ## ✦ Setup
 
-**1. Copy the environment file**
+### Copy Environment File
 
 ```bash
 cp .env.example .env
 ```
 
-**2. Fill in your credentials**
+### Configure Variables
 
 ```env
 DISCORD_TOKEN=your_bot_token
 CLIENT_ID=your_application_id
-GUILD_ID=your_guild_id         # optional — omit for global commands
-OWNER_ID=your_discord_user_id  # optional — unlocks /stats
+GUILD_ID=your_guild_id
+OWNER_ID=your_discord_user_id
 ```
 
 <br/>
 
 ## ✦ Discord Developer Portal Guide
 
-1. Go to [discord.com/developers/applications](https://discord.com/developers/applications)
-2. Click **New Application**, give it a name, and save
-3. Navigate to **Bot** → click **Add Bot** → confirm
-4. Under **Token**, click **Reset Token** and copy it into `DISCORD_TOKEN`
-5. Enable **Server Members Intent** and **Presence Intent** under Privileged Gateway Intents
-6. Go to **OAuth2 → General**, copy your **Client ID** into `CLIENT_ID`
-7. Go to **OAuth2 → URL Generator**
-   - Scopes: `bot`, `applications.commands`
-   - Permissions: `Send Messages`, `Embed Links`, `Read Message History`, `Manage Messages`, `Kick Members`, `Ban Members`
-8. Open the generated URL to invite the bot to your server
-9. Right-click your server → **Copy Server ID** → paste into `GUILD_ID`
+1. Visit https://discord.com/developers/applications
+2. Create a new application.
+3. Open the **Bot** section.
+4. Click **Add Bot**.
+5. Generate a bot token.
+6. Copy the token into `DISCORD_TOKEN`.
+7. Enable required privileged intents.
+8. Copy the Application ID into `CLIENT_ID`.
+9. Generate an OAuth2 invite URL.
+10. Invite the bot to your server.
+11. Copy your server ID into `GUILD_ID`.
 
 <br/>
 
 ## ✦ Environment Variables
 
-| Variable | Required | Description |
-|---|---|---|
-| `DISCORD_TOKEN` | ✅ | Bot token from the Developer Portal |
-| `CLIENT_ID` | ✅ | Application (client) ID |
-| `GUILD_ID` | ➖ | Guild ID for instant guild-scoped deployment |
-| `OWNER_ID` | ➖ | Your Discord user ID — unlocks `/stats` |
+| Variable        | Required | Description                             |
+| --------------- | -------- | --------------------------------------- |
+| `DISCORD_TOKEN` | Yes      | Bot token from the Developer Portal     |
+| `CLIENT_ID`     | Yes      | Discord application ID                  |
+| `GUILD_ID`      | No       | Guild ID for instant command deployment |
+| `OWNER_ID`      | No       | Your Discord user ID. Enables `/stats`  |
 
 <br/>
 
-## ✦ Running the Bot
+## ✦ Running The Bot
 
 ```bash
-# Production
 npm start
+```
 
-# Development — auto-restarts on file changes
+Development mode:
+
+```bash
 npm run dev
 ```
 
 <br/>
 
-## ✦ Deploying Commands
+## ✦ Deploy Commands
 
-Run once before starting the bot, and again whenever you change a command definition:
+Run before starting the bot and whenever command definitions change.
 
 ```bash
 npm run deploy
 ```
 
-If `GUILD_ID` is set, commands register to that guild instantly. Without it, global commands may take up to an hour to propagate.
+If `GUILD_ID` is configured, commands are deployed instantly to that guild.
+
+Without `GUILD_ID`, commands are deployed globally and may take up to one hour to appear.
 
 <br/>
 
 ## ✦ Folder Structure
 
-```
-evelyns/
-├── data/                        # Auto-created; stores usage stats
+```text
+discordme_evelyns/
+├── data/
 ├── src/
 │   ├── commands/
 │   │   ├── developer/
-│   │   │   └── stats.js
 │   │   ├── moderation/
-│   │   │   ├── ban.js
-│   │   │   ├── kick.js
-│   │   │   └── purge.js
 │   │   └── utility/
-│   │       ├── avatar.js
-│   │       ├── help.js
-│   │       ├── ping.js
-│   │       ├── serverinfo.js
-│   │       ├── uptime.js
-│   │       └── userinfo.js
 │   ├── config/
-│   │   └── constants.js
 │   ├── database/
-│   │   └── store.js
 │   ├── events/
-│   │   ├── client/
-│   │   │   ├── interactionCreate.js
-│   │   │   └── ready.js
-│   │   └── guild/
-│   │       ├── guildCreate.js
-│   │       └── guildDelete.js
 │   ├── handlers/
-│   │   ├── commandHandler.js
-│   │   └── eventHandler.js
 │   ├── utils/
-│   │   ├── cooldown.js
-│   │   ├── embed.js
-│   │   ├── errorHandler.js
-│   │   ├── format.js
-│   │   ├── logger.js
-│   │   └── permissions.js
 │   ├── deploy.js
 │   └── index.js
 ├── .env.example
@@ -166,50 +147,126 @@ evelyns/
 
 <br/>
 
+## ✦ Available Commands
+
+### Utility
+
+* `/ping`
+* `/help`
+* `/userinfo`
+* `/serverinfo`
+* `/avatar`
+* `/uptime`
+
+### Moderation
+
+* `/ban`
+* `/kick`
+* `/purge`
+
+### Developer
+
+* `/stats`
+
+<br/>
+
 ## ✦ Adding Commands
 
-1. Create a `.js` file inside the appropriate `src/commands/<category>/` folder
-2. Export the required properties:
+Create a file inside:
+
+```text
+src/commands/<category>/
+```
+
+Example:
 
 ```js
 import { SlashCommandBuilder } from 'discord.js';
 
 export const data = new SlashCommandBuilder()
   .setName('example')
-  .setDescription('An example command.');
+  .setDescription('Example command');
 
 export const cooldown = 5;
 export const category = 'utility';
-export const guildOnly = true;       // optional
-export const userPermissions = [];   // optional: PermissionFlagsBits values
-export const botPermissions = [];    // optional: PermissionFlagsBits values
 
-export async function execute(interaction, client) {
-  await interaction.reply({ content: 'Hello!', ephemeral: true });
+export async function execute(interaction) {
+  await interaction.reply('Hello World');
 }
 ```
 
-3. Run `npm run deploy` to register the command with Discord
-4. Restart the bot
+Deploy commands:
+
+```bash
+npm run deploy
+```
+
+Restart the bot after deployment.
 
 <br/>
 
 ## ✦ Troubleshooting
 
-**Commands not appearing after deploy**
-Confirm `CLIENT_ID` and `GUILD_ID` are correct. If deploying globally, wait up to one hour.
+### Commands Not Appearing
 
-**Bot online but commands fail silently**
-Verify your `DISCORD_TOKEN` hasn't been regenerated. Make sure Privileged Gateway Intents are enabled in the portal.
+* Verify `CLIENT_ID`
+* Verify `GUILD_ID`
+* Run `npm run deploy`
+* Wait for global deployment propagation
 
-**`Missing Access` or permission errors**
-Re-invite the bot using the OAuth2 URL Generator with all required scopes and permissions.
+### Bot Online But Commands Fail
 
-**`Unknown interaction` errors**
-The bot didn't respond within the 3-second window. Ensure async commands call `interaction.deferReply()` before any awaited work.
+* Verify `DISCORD_TOKEN`
+* Verify privileged intents
+* Check console logs
 
-**Node version errors**
-Run `node -v` — this project requires Node.js 18 or higher.
+### Permission Errors
+
+* Verify bot permissions
+* Verify channel permissions
+* Reinvite the bot if required
+
+### Unknown Interaction
+
+Use:
+
+```js
+await interaction.deferReply();
+```
+
+for commands that require additional processing time.
+
+### Node.js Errors
+
+```bash
+node -v
+```
+
+Node.js 18 or higher is required.
+
+<br/>
+
+## ✦ Tech Stack
+
+* Discord.js v14
+* Node.js
+* JavaScript ES Modules
+* ESLint
+* Prettier
+
+<br/>
+
+## ✦ License
+
+MIT License
+
+<br/>
+
+## ✦ Author
+
+**Dika Yugi Pratama**
+
+Portfolio project focused on scalable Discord bot development and clean software architecture.
 
 <br/>
 
@@ -217,6 +274,6 @@ Run `node -v` — this project requires Node.js 18 or higher.
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=5865F2&height=100&section=footer" width="100%"/>
 
-made with 💜 by **[lincode.dev](https://lincode.dev)**
+Made with 💜 by **[lincode.dev](https://lincode.dev)**
 
 </div>
