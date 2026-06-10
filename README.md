@@ -1,6 +1,6 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=12,20,24&height=200&section=header&text=✦%20Evelyns&fontSize=70&fontColor=ffffff&fontAlignY=42&desc=discord%20bot%20·%20lincode.dev&descAlignY=65&descSize=18&descColor=f0d6ff&animation=fadeIn" width="100%"/>
-<br/>
+<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=12,20,24&height=220&section=header&text=Lynnnsku&fontSize=76&fontColor=ffffff&fontAlignY=42&desc=elegant%20%E2%9C%A6%20powerful%20%E2%9C%A6%20reliable&descAlignY=68&descSize=18&descColor=f0d6ff&animation=fadeIn" width="100%"/>
+</div>
 
 [![discord.js](https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge\&logo=discord\&logoColor=white)](https://discord.js.org)
 [![Node.js](https://img.shields.io/badge/node.js-18+-339933?style=for-the-badge\&logo=node.js\&logoColor=white)](https://nodejs.org)
@@ -266,10 +266,11 @@ MIT License
 
 Portfolio project focused on scalable Discord bot development and clean software architecture.
 
-<br/>
+
+<sub>· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ✦ · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</sub>
+
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=12,20,24&height=80&section=footer&reversal=true" width="100%"/>
-<br/>
-`✦` made with 💜 by **[lincode.dev](https://lincode.dev)**
- 
+
+<sub>✦ Made with by <a href="https://lincode.dev">lincode.dev</a></sub>
+
 </div>
