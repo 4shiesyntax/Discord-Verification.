@@ -2,10 +2,18 @@
 <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&customColorList=12,20,24&height=220&section=header&text=Lynnnsku&fontSize=76&fontColor=ffffff&fontAlignY=42&desc=elegant%20%E2%9C%A6%20powerful%20%E2%9C%A6%20reliable&descAlignY=68&descSize=18&descColor=f0d6ff&animation=fadeIn" width="100%"/>
 </div>
 
-[![discord.js](https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge\&logo=discord\&logoColor=white)](https://discord.js.org)
-[![Node.js](https://img.shields.io/badge/node.js-18+-339933?style=for-the-badge\&logo=node.js\&logoColor=white)](https://nodejs.org)
+<div align="center">
+
+[![discord.js](https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.js.org)
+[![Node.js](https://img.shields.io/badge/node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![License](https://img.shields.io/badge/license-MIT-c9c9ff?style=for-the-badge)](LICENSE)
-[![Made by](https://img.shields.io/badge/made%20by-lincode.dev-5865F2?style=for-the-badge)](https://lincode.dev)
+
+<br>
+
+![GitHub last commit](https://img.shields.io/github/last-commit/4shiesyntax/discordme_evelyns?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/4shiesyntax/discordme_evelyns?style=for-the-badge)
+
+</div>
 
 <br/>
 
@@ -262,15 +270,27 @@ MIT License
 
 ## ✦ Author
 
-**Dika Yugi Pratama**
-
-Portfolio project focused on scalable Discord bot development and clean software architecture.
-
-
-<sub>· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ✦ · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</sub>
-
 <div align="center">
 
-<sub>✦ Made with by <a href="https://lincode.dev">lincode.dev</a></sub>
+<h3>Dika Yugi Pratama</h3>
 
-</div>
+<p>
+Building modern software, scalable Discord systems,
+and meaningful digital experiences.
+</p>
+
+<br>
+
+<a href="https://lincode.dev">
+  <img src="https://cdn.simpleicons.org/googlechrome/ffffff" width="22">
+</a>
+&nbsp;&nbsp;
+
+<a href="https://instagram.com/lincodedev">
+  <img src="https://cdn.simpleicons.org/instagram/E4405F" width="22">
+</a>
+&nbsp;&nbsp;
+
+<a href="https://github.com/4shiesyntax">
+  <img src="https://cdn.simpleicons.org/github/ffffff" width="22">
+</a>
