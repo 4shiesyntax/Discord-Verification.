@@ -272,7 +272,7 @@ MIT License
 
 <div align="center">
 
-<h3>Dika Yugi Pratama</h3>
+<h3>Dika Yugi Pratama</h3 >
 
 <p>
 Building modern software, scalable Discord systems,
